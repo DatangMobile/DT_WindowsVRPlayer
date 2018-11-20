@@ -133,7 +133,11 @@ public class UniversalMediaPlayer : MonoBehaviour, IMediaListener, IPlayerTextur
 
     public string Path
     {
-        set { _path = value; }
+        set
+        {
+            _path = value;
+            _path.Replace("${Application.dataPath}", Application.dataPath);
+        }
         get { return _path; }
     }
 
@@ -503,7 +507,9 @@ public class UniversalMediaPlayer : MonoBehaviour, IMediaListener, IPlayerTextur
         if (EditorApplication.isPaused)
             return;
 #endif
-        
+
+        _path = this._path.Replace("${Application.dataPath}", Application.dataPath);
+
         if (_mediaPlayer == null || string.IsNullOrEmpty(_path))
             return;
 

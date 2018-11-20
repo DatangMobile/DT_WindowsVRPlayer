@@ -157,7 +157,7 @@ GameObject:
   - component: {fileID: 276571306}
   - component: {fileID: 276571311}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Camera1080
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -205,7 +205,7 @@ Camera:
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: 0
+  m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -289,7 +289,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11420564, guid: c404114afaafa3b4494665d1634c383c, type: 2}
       propertyPath: _path
-      value: "D:\\\u7D20\u6750\\\u91CD\u5E86\\\u697C\u89D2.mp4"
+      value: "D:\\\u89C6\u9891\\\u822A\u62CD\u89C6\u9891\\1080.mp4"
       objectReference: {fileID: 0}
     - target: {fileID: 11420564, guid: c404114afaafa3b4494665d1634c383c, type: 2}
       propertyPath: _autoPlay
@@ -365,7 +365,7 @@ GameObject:
   - component: {fileID: 470289102}
   - component: {fileID: 470289101}
   m_Layer: 0
-  m_Name: Camera2
+  m_Name: Camera4K
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -413,7 +413,7 @@ Camera:
     x: 0
     y: 0
     width: 1
-    height: 0.5
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -441,6 +441,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 694742921}
+  - component: {fileID: 694742922}
   m_Layer: 0
   m_Name: CameraControl
   m_TagString: Untagged
@@ -461,6 +462,23 @@ Transform:
   m_Father: {fileID: 1736547563}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &694742922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 694742920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fac42747bff2de44ea8ec23811a8256f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cam1080: {fileID: 276571309}
+  _cam4k: {fileID: 470289103}
+  _changerate: 0.002
+  _accelerate: 0.001
+  _durtime: 60000
+  _1080time: 15000
 --- !u!1001 &1032841763
 Prefab:
   m_ObjectHideFlags: 0
@@ -506,7 +524,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11420564, guid: c404114afaafa3b4494665d1634c383c, type: 2}
       propertyPath: _path
-      value: "D:\\\u89C6\u9891\\\u822A\u62CD\u89C6\u9891\\1080.mp4"
+      value: "D:\\\u89C6\u9891\\\u5168\u666F\u89C6\u9891\\DEMO\\pano.mp4"
       objectReference: {fileID: 0}
     - target: {fileID: 11420564, guid: c404114afaafa3b4494665d1634c383c, type: 2}
       propertyPath: _autoPlay
@@ -535,6 +553,10 @@ Prefab:
     - target: {fileID: 129894, guid: c404114afaafa3b4494665d1634c383c, type: 2}
       propertyPath: m_Name
       value: UniversalMediaPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 11420564, guid: c404114afaafa3b4494665d1634c383c, type: 2}
+      propertyPath: _playRate
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c404114afaafa3b4494665d1634c383c, type: 2}
