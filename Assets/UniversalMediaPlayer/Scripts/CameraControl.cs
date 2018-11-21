@@ -48,6 +48,7 @@ public class CameraControl : MonoBehaviour {
     private System.Timers.Timer timer_all;
     private bool change1080 = false;
     private bool durcomplete = false;
+    private float defalutchangerate;
 
     // Use this for initialization
     void Start ()
@@ -61,6 +62,7 @@ public class CameraControl : MonoBehaviour {
         timer_all.Elapsed += Timer_all_Elapsed;
         timer_all.AutoReset = true;
         timer_all.Enabled = true;
+        defalutchangerate = _changerate;
     }
     
     // Update is called once per frame
@@ -74,11 +76,18 @@ public class CameraControl : MonoBehaviour {
             cam1080.rect = rect1080;
         }
         // 如果整个周期到了，还原1080相机;
-        if(durcomplete)
+        if(durcomplete && (cam1080.rect.height <= 1))
         {
-            cam1080.rect = new Rect(0, 0, 1, 1);
-            durcomplete = false;
-            change1080 = false;
+            _changerate += _accelerate;
+            rect1080.height += _changerate;
+            rect1080.width += _changerate;
+            cam1080.rect = rect1080;
+
+            if ((cam1080.rect.height == 1) && (cam1080.rect.width == 1))
+            {
+                durcomplete = false;
+                change1080 = false;
+            }
         }
     }
 
@@ -86,6 +95,7 @@ public class CameraControl : MonoBehaviour {
     {
         // 如果还在整个展示周期中，则不还原;
         change1080 = true;
+        durcomplete = false;
         timer_start.Enabled = false;
         Debug.Log("Timer start Elapsed!");
     }
@@ -93,8 +103,9 @@ public class CameraControl : MonoBehaviour {
     private void Timer_all_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
     {
         durcomplete = true;
+        change1080 = false;
         timer_start.Enabled = true;
-        rect1080 = new Rect(0, 0, 1, 1);
+        _changerate = defalutchangerate;
         Debug.Log("Timer all Elapsed!");
     }
 
