@@ -229,6 +229,7 @@
     <Compile Include="Assets\UniversalMediaPlayer\Scripts\ARVideoCanvasHelper.cs" />
     <Compile Include="Assets\UniversalMediaPlayer\Scripts\CameraControl.cs" />
     <Compile Include="Assets\UniversalMediaPlayer\Scripts\EventsHandlerExample.cs" />
+    <Compile Include="Assets\UniversalMediaPlayer\Scripts\PlatVideoCompareControl.cs" />
     <Compile Include="Assets\UniversalMediaPlayer\Scripts\SimpleRotateSphere.cs" />
     <Compile Include="Assets\UniversalMediaPlayer\Scripts\UMPUIExample.cs" />
     <Compile Include="Assets\UniversalMediaPlayer\Scripts\UniversalMediaPlayer.cs" />

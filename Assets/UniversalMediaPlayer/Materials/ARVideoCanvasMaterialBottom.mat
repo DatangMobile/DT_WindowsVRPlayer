@@ -56,6 +56,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - PixelSnap: 0
+    - _AlphaPower: 1
     - _BorderSize: 0
     - _BorderUWidth: 0
     - _BorderVWidth: 0
